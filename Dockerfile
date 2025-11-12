@@ -5,7 +5,7 @@ COPY . .
 RUN gradle clean bootJar
 
 #Etapa 2: Run
-FORM eclipse-temurin:21-jdk \
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
 COPY --from=builder /app/build/libs/*.jar app.jar
 EXPOSE 8080
