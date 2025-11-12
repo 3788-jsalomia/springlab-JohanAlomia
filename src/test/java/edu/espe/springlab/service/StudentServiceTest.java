@@ -15,7 +15,7 @@ import java.time.LocalDate;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 @DataJpaTest
-@Import(StudentServiceTest.class)
+@Import(StudentServiceImpl.class)
 public class StudentServiceTest {
     @Autowired
     private StudentServiceImpl service;
