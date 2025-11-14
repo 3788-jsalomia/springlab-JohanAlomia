@@ -18,4 +18,6 @@ public interface StudentService {
 
     //Cambiar estado del estudiante
     StudentResponse deactivate(Long id);
+
+
 }

@@ -1,6 +1,7 @@
 package edu.espe.springlab.service.impl;
 
 import edu.espe.springlab.domain.Student;
+import edu.espe.springlab.dto.StatsResponse;
 import edu.espe.springlab.dto.StudentRequestData;
 import edu.espe.springlab.dto.StudentResponse;
 import edu.espe.springlab.repository.StudentRepository;
@@ -58,5 +59,14 @@ public class StudentServiceImpl implements StudentService {
         r.setBirthDate(student.getBirthDate());
         r.setActive(student.getActive());
         return r;
+    }
+
+
+    public StatsResponse getStats() {
+        long total = repo.count();
+        long active = repo.countByActiveTrue();
+        long inactive = repo.countByActiveFalse();
+
+        return new StatsResponse(total, active, inactive);
     }
 }
