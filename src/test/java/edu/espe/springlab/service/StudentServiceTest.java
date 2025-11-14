@@ -5,6 +5,7 @@ import edu.espe.springlab.dto.StudentRequestData;
 import edu.espe.springlab.repository.StudentRepository;
 import edu.espe.springlab.service.impl.StudentServiceImpl;
 import edu.espe.springlab.web.advice.ConflictException;
+import edu.espe.springlab.web.advice.NotFoundException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -42,5 +43,14 @@ public class StudentServiceTest {
 
         assertThatThrownBy(()->service.create(req)).isInstanceOf(ConflictException.class);
 
+    }
+
+    // Test de servicio
+    @Test
+    void shouldThrowNotFoundExceptionWhenIdDoesNotExist() {
+        Long idInexistente = 9999L;
+        assertThatThrownBy(() -> service.getById(idInexistente))
+                .isInstanceOf(NotFoundException.class)
+                .hasMessageContaining("ESTE ID NO EXISTE");
     }
 }
