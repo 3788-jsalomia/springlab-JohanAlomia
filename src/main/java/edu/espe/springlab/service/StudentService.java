@@ -1,5 +1,6 @@
 package edu.espe.springlab.service;
 
+import edu.espe.springlab.dto.StatsResponse;
 import edu.espe.springlab.dto.StudentRequestData;
 import edu.espe.springlab.dto.StudentResponse;
 
@@ -19,5 +20,6 @@ public interface StudentService {
     //Cambiar estado del estudiante
     StudentResponse deactivate(Long id);
 
-
+    // Obtener estadísticas de estudiantes (total, activos, inactivos)
+    StatsResponse getStats();
 }
