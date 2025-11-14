@@ -47,7 +47,7 @@ public class StudentServiceTest {
 
     // Test de servicio
     @Test
-    void shouldThrowNotFoundExceptionWhenIdDoesNotExist() {
+    void CuandoIdNoExiste() {
         //Nombre: Johan Alomia
         Long idInexistente = 9999L;
         assertThatThrownBy(() -> service.getById(idInexistente))

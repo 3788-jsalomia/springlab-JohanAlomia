@@ -19,9 +19,9 @@ public class StudentControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    void shouldReturn404WhenIdDoesNotExist() throws Exception {
-        mockMvc.perform(get("/students/9999"))
+    void error404CuandoIdNoExiste() throws Exception {
+        mockMvc.perform(get("/api/students/9999"))
                 .andExpect(status().isNotFound())
-                .andExpect(content().string(containsString("no existe")));
+                .andExpect(content().string(containsString("No existe estudiante")));
     }
 }
