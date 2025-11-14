@@ -39,12 +39,7 @@ public class StudentRepositoryTest {
 
 
     // Test de controlador (MockMvc)
-    /*@Test
-    void shouldReturn404WhenIdDoesNotExist() throws Exception {
-        mockMvc.perform(get("/students/9999"))
-                .andExpect(status().isNotFound())
-                .andExpect(content().string(containsString("no existe")));
-    }
+    /*
 
     @Test
     void shouldDeactivateStudent() {

@@ -48,9 +48,11 @@ public class StudentServiceTest {
     // Test de servicio
     @Test
     void shouldThrowNotFoundExceptionWhenIdDoesNotExist() {
+        //Nombre: Johan Alomia
         Long idInexistente = 9999L;
         assertThatThrownBy(() -> service.getById(idInexistente))
                 .isInstanceOf(NotFoundException.class)
-                .hasMessageContaining("ESTE ID NO EXISTE");
+                .hasMessageContaining("No existe estudiante");
     }
+
 }
